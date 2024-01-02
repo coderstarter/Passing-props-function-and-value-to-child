@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import { ReactDOM } from "react";
+// import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = (props) =>  {
+    return(
+        <div style={{"display": "flex"}}>
+            <button onClick={() => props.update(props.value + 1)}>Increment</button>
+            <h4>{props.value}</h4>
+            <button onClick={()=> props.update(props.value-1)}>Decrement</button>
+        </div>
+    )
 }
-
 export default App;
